@@ -3,12 +3,15 @@ def calculation(amountc):
     amountp = 0
     while paid == False:
         coin = int(input("enter coin: "))
-        amountp += coin
-        if amountp >= amountc:
-            print("here is your",option,"and",str(amountp-amountc)+"p for your change")
-            paid = True
+        if coin == 50 or coin == 20 or coin == 10 or coin == 5:
+            amountp += coin
+            if amountp >= amountc:
+                print("here is your",option,"and",str(amountp-amountc)+"p for your change")
+                paid = True
+            else:
+                print("you need to pay",(amountc-amountp))#
         else:
-            print("you need to pay",(amountc-amountp))
+            print("we only except 50p,20p,10p,5p")
 
 print("menu:\n1.coffee - 75p\n2.hot chocolate - 60p\n3.tea - 70p")
 while True:
